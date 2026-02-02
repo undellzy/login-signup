@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="src/output.css" />
+  </head>
+
+  <body
+    class="min-h-screen flex items-center justify-center bg-[url('img/creative-arrangement-with-different-books.jpg')] bg-cover bg-center bg-no-repeat font-sans"
+  >
+    <!-- LOGIN BOX -->
+    <div class="w-full max-w-[420px] text-center">
+      <!-- TITLE -->
+      <h1 class="text-[35px] font-semibold text-gray-800 mb-8">Login</h1>
+
+      <!-- INPUT -->
+      <div class="space-y-4">
+        <!-- EMAIL -->
+        <input
+          type="email"
+          placeholder="Email"
+          class="w-full h-[44px] px-5 rounded-full bg-white text-[14px] text-gray-700 shadow-md outline-none focus:ring-2 focus:ring-blue-400"
+        />
+
+        <!-- PASSWORD -->
+        <div class="relative">
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            class="w-full h-[44px] px-5 pr-12 rounded-full bg-white text-[14px] text-gray-700 shadow-md outline-none focus:ring-2 focus:ring-blue-400"
+          />
+
+          <!-- EYE TOGGLE (SVG) -->
+          <span
+            id="eye"
+            class="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer text-gray-500 hover:text-gray-700"
+          >
+            <!-- EYE CLOSED (DEFAULT) -->
+            <svg
+              id="eyeClose"
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.8"
+                d="M3 3l18 18"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.8"
+                d="M10.7 5.1A10.94 10.94 0 0 1 12 4.5
+                c6.5 0 10.5 7.5 10.5 7.5
+                a18.9 18.9 0 0 1-3.3 4.6"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.8"
+                d="M6.1 6.1A18.9 18.9 0 0 0 1.5 12
+                s4 7.5 10.5 7.5
+                a10.9 10.9 0 0 0 4.2-.8"
+              />
+            </svg>
+
+            <!-- EYE OPEN -->
+            <svg
+              id="eyeOpen"
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 hidden"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.8"
+                d="M1.5 12s4-7.5 10.5-7.5S22.5 12 22.5 12
+                18.5 19.5 12 19.5 1.5 12 1.5 12z"
+              />
+              <circle cx="12" cy="12" r="3.5" />
+            </svg>
+          </span>
+        </div>
+
+        <!-- CODE -->
+        <input
+          type="text"
+          placeholder="Enter Code: 6 digit code"
+          class="w-full h-[44px] px-5 rounded-full bg-white text-[14px] text-gray-700 shadow-md outline-none focus:ring-2 focus:ring-blue-400"
+        />
+      </div>
+
+      <!-- LOGIN BUTTON -->
+      <button
+        class="w-full h-[44px] mt-8 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 text-white text-[14px] font-medium shadow-lg hover:brightness-110 transition"
+      >
+        Login
+      </button>
+
+      <!-- DIVIDER -->
+      <p class="mt-8 mb-4 text-[13px] text-gray-600">Or Continue With</p>
+
+      <!-- SOCIAL -->
+      <div class="flex gap-4 justify-center flex-nowrap">
+        <button
+          class="flex items-center justify-center gap-2 w-[190px] h-[44px] rounded-full bg-white text-[13px] text-gray-700 shadow-md whitespace-nowrap"
+        >
+          <img src="img/google.png" class="w-4" />
+          Continue with Google
+        </button>
+
+        <button
+          class="flex items-center justify-center gap-2 w-[190px] h-[44px] rounded-full bg-white text-[13px] text-gray-700 shadow-md whitespace-nowrap"
+        >
+          <img src="img/facebook.png" class="w-4" />
+          Continue with Facebook
+        </button>
+      </div>
+
+      <!-- SIGN UP -->
+      <p class="mt-7 text-[12px] text-gray-600">
+        Don’t have an account?
+        <a href="singup_page.html" class="text-blue-500 font-medium">
+          Create an account now
+        </a>
+      </p>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+      const eye = document.getElementById("eye");
+      const password = document.getElementById("password");
+      const eyeOpen = document.getElementById("eyeOpen");
+      const eyeClose = document.getElementById("eyeClose");
+
+      eye.addEventListener("click", () => {
+        const isHidden = password.type === "password";
+
+        password.type = isHidden ? "text" : "password";
+        eyeOpen.classList.toggle("hidden", !isHidden);
+        eyeClose.classList.toggle("hidden", isHidden);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/output.css">
+  </head>
+
+  <body class="min-h-screen bg-gray-100">
+    <div class="min-h-screen grid grid-cols-1 md:grid-cols-2">
+      <!-- LEFT -->
+      <div
+        class="relative bg-cover bg-center"
+        style="
+          background-image: url(&quot;https://images.unsplash.com/photo-1512820790803-83ca734da794&quot;);
+        "
+      >
+        <div class="absolute inset-0 bg-black/70"></div>
+
+        <div
+          class="relative z-10 h-full flex flex-col justify-center px-12 text-white"
+        >
+          <h1 class="text-4xl font-bold leading-tight mb-6">
+            Learn A New<br />
+            Skill Everyday,<br />
+            Anytime. And<br />
+            Anywhere
+          </h1>
+          <p class="text-sm max-w-md leading-relaxed">
+            1000+ Course Covering All Tech Domains For You To Learn And Explore
+            New Opportunities Learn From Industry Expert And Land Your Dream Job
+          </p>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="flex items-center justify-center">
+        <div
+          class="bg-white w-full h-full rounded-l-[3rem] overflow-hidden flex items-center justify-center px-6"
+        >
+          <div class="w-full max-w-md">
+            <!-- TITLE -->
+            <h2 class="text-4xl font-semibold mb-10 -mt-6">Create Account</h2>
+
+            <form class="space-y-4">
+              <!-- NAME -->
+              <div class="flex gap-3">
+                <input class="w-1/2 input" placeholder="First Name" />
+                <input class="w-1/2 input" placeholder="Last Name" />
+              </div>
+
+              <input
+                type="email"
+                class="w-full input"
+                placeholder="Email Address"
+              />
+
+              <!-- PASSWORD -->
+              <div class="relative">
+                <input
+                  id="password"
+                  type="password"
+                  class="w-full input pr-12"
+                  placeholder="Password"
+                />
+                <button
+                  type="button"
+                  onclick="togglePassword('password', this)"
+                  class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                >
+                  <!-- EYE -->
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.458 12C3.732 7.943 7.523 5 12 5
+                    c4.478 0 8.268 2.943 9.542 7
+                    -1.274 4.057-5.064 7-9.542 7
+                    -4.477 0-8.268-2.943-9.542-7z"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              <!-- REPEAT PASSWORD -->
+              <div class="relative">
+                <input
+                  id="repeatPassword"
+                  type="password"
+                  class="w-full input pr-12"
+                  placeholder="Repeat Password"
+                />
+                <button
+                  type="button"
+                  onclick="togglePassword('repeatPassword', this)"
+                  class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                >
+                  <!-- EYE -->
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.458 12C3.732 7.943 7.523 5 12 5
+                    c4.478 0 8.268 2.943 9.542 7
+                    -1.274 4.057-5.064 7-9.542 7
+                    -4.477 0-8.268-2.943-9.542-7z"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              <!-- MAIN BUTTON -->
+              <button
+                class="w-full bg-purple-500 hover:bg-purple-600 text-white py-3 rounded-[1.75rem] font-medium transition"
+              >
+                Create Account
+              </button>
+
+              <!-- DIVIDER -->
+              <div class="flex items-center gap-3 my-6">
+                <div class="flex-1 h-px bg-gray-300"></div>
+                <span class="text-xs text-gray-400">Or Sign Up With</span>
+                <div class="flex-1 h-px bg-gray-300"></div>
+              </div>
+
+              <!-- SOCIAL -->
+              <div class="flex gap-3">
+                <!-- FACEBOOK -->
+                <button
+                  class="flex items-center justify-center gap-2 w-1/2 bg-gray-200 rounded-[1.4rem] px-[14px] py-[10px] leading-none hover:bg-gray-300 transition"
+                >
+                  <img
+                    src="img/facebook.png"
+                    class="w-[18px] h-[18px]"
+                    alt="Facebook"
+                  />
+                  <span
+                    class="text-base font-medium leading-none text-gray-700"
+                  >
+                    Facebook
+                  </span>
+                </button>
+
+                <!-- GOOGLE -->
+                <button
+                  class="flex items-center justify-center gap-2 w-1/2 bg-gray-200 rounded-[1.4rem] px-[14px] py-[6px] leading-none hover:bg-gray-300 transition"
+                >
+                  <img
+                    src="img/google.png"
+                    class="w-[18px] h-[18px]"
+                    alt="Google"
+                  />
+                  <span
+                    class="text-base font-medium leading-none text-gray-700"
+                  >
+                    Google
+                  </span>
+                </button>
+              </div>
+              <!-- LOGIN LINK -->
+              <p class="text-center text-sm text-gray-500 mt-6">
+                Already have an account?
+                <a href="login_page.html" class="text-purple-500 font-medium hover:underline">
+                  Login
+                </a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INPUT STYLE -->
+    <style>
+      .input {
+        background-color: #e5e7eb;
+        border-radius: 1.75rem;
+        padding: 0.75rem 1.25rem;
+        outline: none;
+      }
+      .input:focus {
+        box-shadow: 0 0 0 2px rgb(192 132 252);
+      }
+    </style>
+
+    <!-- PASSWORD TOGGLE SCRIPT -->
+    <script>
+      function togglePassword(id, btn) {
+        const input = document.getElementById(id);
+        const isPassword = input.type === "password";
+        input.type = isPassword ? "text" : "password";
+
+        btn.innerHTML = isPassword
+          ? `
+        <svg class="w-5 h-5" fill="none" stroke="currentColor"
+             viewBox="0 0 24 24" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M3 3l18 18"/>
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M10.58 10.58a3 3 0 004.24 4.24"/>
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M16.24 16.24A9.96 9.96 0 0112 19
+               c-4.478 0-8.268-2.943-9.542-7
+               a9.97 9.97 0 012.317-3.568"/>
+        </svg>`
+          : `
+        <svg class="w-5 h-5" fill="none" stroke="currentColor"
+             viewBox="0 0 24 24" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M2.458 12C3.732 7.943 7.523 5 12 5
+               c4.478 0 8.268 2.943 9.542 7
+               -1.274 4.057-5.064 7-9.542 7
+               -4.477 0-8.268-2.943-9.542-7z"/>
+        </svg>`;
+      }
+    </script>
+  </body>
+</html>
